@@ -1,0 +1,177 @@
+
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .logo-container {
+    text-align: center;
+  }
+  
+  .logo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  
+  }
+
+  .login-background {
+    /* background-image: url("loginbackground.png"); */
+    background-image: url(nw.jpg);
+    /* opacity: 0.9; */
+    /* background-image: url(Login.jpg); */
+    /* position: relative; */
+    /* background-clip: url(videoeNW.mp4) no-repeat center center fixed; */
+    background-size: cover;
+    background-position: center;
+    /* transform-box: stroke-box; */
+    /* height: 390px; */
+    /* Additional styles if needed */
+    
+  }
+
+  /* .login-background:hover {
+    opacity: 0.7;
+  } */
+  
+  
+
+  /* LandingPage.css */
+
+/* Apply basic styling and layout to the page */
+.landing-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  /* Style the navigation menu */
+  nav ul {
+    list-style: none;
+     display: flex; 
+    justify-content: center;
+  }
+  
+  nav ul li {
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Style the hero section */
+  #hero {
+    text-align: center;
+    padding: 100px 0;
+  }
+  
+  #hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  #hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: floralwhite;
+  }
+
+  #hero input {
+    padding: 10px 20px; 
+    background-color: #fff;
+    
+
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  #hero button {
+    padding: 10px 20px; 
+    background-color: #3F6C51;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Style the other sections, footer, and additional elements as needed */
+  
+  .buttons {
+    display: flex;
+  }
+
+  .fontColor {
+    color: #024930;
+    font-weight: bold;
+  }
+
+  /* Login page css starts from here */
+
+  .container {
+    max-width: 320px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+ padding: 20px;
+ opacity: 0.9;
+
+  }
+
+  .form-group {
+
+     margin-bottom: 20px;
+    
+     padding-right: 20px;
+    
+    }
+
+    form h2 {
+
+      text-align: center;
+      
+       margin-bottom: 20px;   
+      
+       }        
+        
+        
+        button:hover {
+        
+        color: white;
+        
+         background-color: #024930;
+        
+         }
+
+
+         label {
+
+           display: block;
+          
+           font-weight: bold;
+          
+           }
+
+           input[type="text"],
+
+ input[type="email"],
+
+ input[type="password"] {
+
+ width: 100%;
+
+ padding: 10px;
+
+ font-size: 16px;
+
+ border: 1px solid #ccc;
+
+ border-radius: 4px;
+
+}
