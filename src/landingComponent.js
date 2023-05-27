@@ -28,7 +28,7 @@ const LandingPage = () => {
         <section id="hero">
           <h1>Welcome to Professional Based Learning</h1>
           <p>Explore your innovative ideas!</p>
-      <input type="text" name="search" placeholder="Project search" style={{width:'100px'}} />
+      <input type="text" name="search" placeholder="Project search" style={{width:'300px'}} />
       <button type="submit">Search</button>
       {/* <Button variant="success">Search</Button> */}
         </section>

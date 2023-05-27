@@ -175,3 +175,36 @@
  border-radius: 4px;
 
 }
+
+           /* Left menu bar */
+/* Example CSS */
+.menu-container {
+     display: flex;
+ }
+
+.menu {
+    width: 100px;
+    background-color: #024930;
+    height: 480px;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    padding: 10px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+

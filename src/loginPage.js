@@ -1,11 +1,49 @@
 
-import React from "react";
+// import React from "react";
 import logo from './loginLogo.jpg';
 import Header from "./headerComponent";
 import './styles.css';
+import axios from 'axios';
+import React, { useState } from 'react';
+// import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import Nav from "react-bootstrap/Nav";
+import Dashboard from "./dashboardComponent";
 
 
 function LoginPage() {
+ const navigate = useNavigate();
+ // const history = useHistory();
+ const [formData, setFormData] = useState({
+  email: '',
+  password: '',
+ });
+
+ const handleChange = (e) => {
+  setFormData({
+   ...formData,
+   [e.target.name]: e.target.value,
+  });
+ };
+
+ const handleSubmit = (e) => {
+  e.preventDefault();
+
+  // Perform form submission and API call
+  axios.post('http://localhost:1992/login', formData)
+      .then(response => {
+       // Handle successful login
+       console.log(response.data);
+       if(response.data=='Login Successfully') {
+          // history.push('/dashboard');
+        navigate('/dashboard');
+       }
+      })
+      .catch(error => {
+       // Handle login error
+       console.error(error);
+      });
+ };
     
     // return(
 
@@ -58,7 +96,7 @@ return(
 <div class="container">
 
 
- <form >
+ <form onSubmit={handleSubmit} >
 
  <h2> <img src={logo} alt ="Logo" style={{ marginBottom: 'auto'}} className="logo" /></h2>
 
@@ -66,7 +104,7 @@ return(
 
  <label for="username">UserName</label>
 
- <input type="text" id="username" name="username" required />
+ <input type="text" value={formData.email} onChange={handleChange} name="email" required />
 
  </div>
 
@@ -74,7 +112,7 @@ return(
 
 <label for="username">Password</label>
 
- <input type="text" id="username" name="username" required />
+ <input type="text" value={formData.password} onChange={handleChange} name="password" required />
 
  </div>
 

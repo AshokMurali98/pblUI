@@ -10,6 +10,8 @@ import LoginPage from './loginPage';
 import SignupPage from './signUp';
 import LandingPage from './landingComponent';
 import LoginPageTest from './testLogin';
+import Dashboard from "./dashboardComponent";
+import MessageScreen from "./signupMessageScreen";
 
 
 
@@ -32,6 +34,8 @@ return(
         <Route exact path="/" element={<LandingPage />} />
         <Route exact path="/login" element={<LoginPage />} />
         <Route exact path="/signup" element={<SignupPage />} />
+        <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route exact path="/message" element={<MessageScreen />} />
     </Routes>
 </Router>
 )
