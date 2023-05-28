@@ -6,7 +6,7 @@ import './styles.css';
 import LeftMenu from "./leftMenu";
 import Navbar from "react-bootstrap/Navbar";
 import imgLogo from "./logoImage.png";
-import Prompt from "./postProject";
+import PostProject from "./postProject";
 
 
 
@@ -35,7 +35,7 @@ function Dashboard() {
             </nav>
             <div align={'right'}>
                 {/*<button >Post your Project</button>*/}
-                <Prompt />
+                <PostProject />
             </div>
             <div className="dashboard">
                 <LeftMenu />
