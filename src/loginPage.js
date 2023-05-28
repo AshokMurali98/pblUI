@@ -9,6 +9,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Nav from "react-bootstrap/Nav";
 import Dashboard from "./dashboardComponent";
+import Form from "react-bootstrap/Form";
 
 
 function LoginPage() {
@@ -28,20 +29,32 @@ function LoginPage() {
 
  const handleSubmit = (e) => {
   e.preventDefault();
-
+  if(formData.email=='ashok@test.com') {
+   // sessionStorage.setItem("useradmin",true)
+   navigate('/admin');
+  }
   // Perform form submission and API call
   axios.post('http://localhost:1992/login', formData)
       .then(response => {
        // Handle successful login
+
        console.log(response.data);
        if(response.data=='Login Successfully') {
           // history.push('/dashboard');
-        navigate('/dashboard');
-       }
+        // if(formData.email=='ashok@test.com') {
+        //  // sessionStorage.setItem("useradmin",true)
+        //  navigate('/admin');
+        // } else {
+         navigate('/dashboard');
+        }
+
+
+
       })
       .catch(error => {
        // Handle login error
-       console.error(error);
+       console.error(error.response.data);
+
       });
  };
     
@@ -117,9 +130,29 @@ return(
  </div>
 
 
+  <Form>
+  <Form.Check
+      inline
+      label="Admin/User"
+      name="group1"
+      type= "radio"
+      // id={`inline-${type}-1`}
+  />
+  <Form.Check
+      inline
+      label="Guest"
+      name="group1"
+      type="radio"
+      // id={`inline-${type}-2`}
+  />
+
+</Form>
+
+
+
  <div>
 
-<button type="submit" class="btn btn-success" >Login</button>
+<button type="submit" class="btn btn-success"  >Login</button>
 
 </div>
 
