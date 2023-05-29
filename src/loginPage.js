@@ -5,11 +5,10 @@ import Header from "./headerComponent";
 import './styles.css';
 import axios from 'axios';
 import React, { useState } from 'react';
-// import { useHistory } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import Nav from "react-bootstrap/Nav";
-import Dashboard from "./dashboardComponent";
 import Form from "react-bootstrap/Form";
+import RadioButtonGroup from "./testRadio";
+
 
 
 function LoginPage() {
@@ -20,6 +19,12 @@ function LoginPage() {
   password: '',
  });
 
+ const [selectedOption, setSelectedOption] = useState('');
+
+ const handleOptionChange = (event) => {
+  setSelectedOption(event.target.value);
+ };
+
  const handleChange = (e) => {
   setFormData({
    ...formData,
@@ -29,7 +34,7 @@ function LoginPage() {
 
  const handleSubmit = (e) => {
   e.preventDefault();
-  if(formData.email=='ashok@test.com') {
+  if(formData.email==='ashok@test.com') {
    // sessionStorage.setItem("useradmin",true)
    navigate('/admin');
   }
@@ -57,51 +62,7 @@ function LoginPage() {
 
       });
  };
-    
-    // return(
 
-    //     <div>
-    //         <Header />
-        
-    //     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '400px' }} className="login-background" >
-               
-    //     <div className="logo-container">
-    //         {/* <div className="login-page"> */}
-           
-            
-    //         {/* <img src={logo} alt ="Logo" style={{ marginBottom: 'auto'}} className="logo" /> */}
-
-            
-         
-    //         <form style={{ width: '250px',  padding: '20px' }}>
-    //          {/* <div className="logo-container">  */}
-            
-    
-    //         {/* </div> */}
-    //             <div>
-
-    //             <input type="text"  class="form-control" placeholder="Email" />
-    //         <br></br>
-                            
-    //                         <input type="text"  class="form-control" placeholder="Password"></input>
-    //                 {/* <label>Email: </label>
-    //                 <input type ="email" style={{ width:'70%', marginBottom: '10px' }} />
-
-    //                 <label>Password: </label>
-    //                 <input type="password" style={{ width:'70%', marginBottom: '10px' }}  /> */}
-    //             </div>
-
-               
-    //             <div>
-    //                 <br></br>
-    //             <input type="button" onclick="discount()" value="Login" class="btn btn-success" />
-    //             </div>
-    //         </form>
-    //     </div>
-    //     </div>
-    //     </div>
-    //     // </div>
-    // );
 
 return(
 <div className="login-background">
@@ -112,56 +73,104 @@ return(
  <form onSubmit={handleSubmit} >
 
  <h2> <img src={logo} alt ="Logo" style={{ marginBottom: 'auto'}} className="logo" /></h2>
-
- <div class="form-group">
-
- <label for="username">UserName</label>
-
- <input type="text" value={formData.email} onChange={handleChange} name="email" required />
-
- </div>
-
- <div class="form-group">
-
-<label for="username">Password</label>
-
- <input type="text" value={formData.password} onChange={handleChange} name="password" required />
-
- </div>
-
-
   <Form>
-  <Form.Check
-      inline
-      label="Admin/User"
-      name="group1"
-      type= "radio"
-      // id={`inline-${type}-1`}
-  />
-  <Form.Check
-      inline
-      label="Guest"
-      name="group1"
-      type="radio"
-      // id={`inline-${type}-2`}
-  />
+   <Form.Check
+       inline
+       label="Admin/User"
+       name="group1"
+       value="Admin/User"
+       type= "radio"
+       checked={selectedOption === 'Admin/User'}
+       onChange={handleOptionChange}
+       // id={`inline-${type}-1`}
+   />
+   <Form.Check
+       inline
+       label="Guest"
+       name="group1"
+       value="Guest"
+       type="radio"
+       checked={selectedOption === 'Guest'}
+       onChange={handleOptionChange}
+       // id={`inline-${type}-2`}
+   />
 
-</Form>
+  </Form>
+
+
+  {/* <div class="form-group">*/}
+
+{/* <label for="username">UserName</label>*/}
+
+{/* <input type="text" value={formData.email} onChange={handleChange} name="email" required />*/}
+
+{/* </div>*/}
+
+{/* <div class="form-group">*/}
+
+{/*<label for="username">Password</label>*/}
+
+{/* <input type="text" value={formData.password} onChange={handleChange} name="password" required />*/}
+
+{/* </div>*/}
+
+
+  {selectedOption === 'Admin/User' && (
+      // Render the content to be shown when 'option1' is selected
+      <div>
+       {/* Place your hidden page behavior components here */}
+       <div className="form-group">
+
+        <label htmlFor="username">UserName</label>
+
+        <input type="text"  name="email" required/>
+
+       </div>
+
+      </div>
+  )}
+
+  {selectedOption === 'Guest' && (
+      // Render the content to be shown when 'option2' is selected
+      <div>
+       {/* Place your hidden page behavior components here */}
+       <div className="form-group">
+
+        <label htmlFor="username">UserName</label>
+
+        <input type="text" value={formData.email} onChange={handleChange} name="email" required/>
+
+       </div>
+
+       <div className="form-group">
+
+        <label htmlFor="username">Password</label>
+
+        <input type="text" value={formData.password} onChange={handleChange} name="password" required/>
+
+       </div>
+
+      </div>
+  )}
 
 
 
- <div>
+  <div>
 
-<button type="submit" class="btn btn-success"  >Login</button>
+   <button type="submit" className="btn btn-success">Login</button>
 
-</div>
+  </div>
+
 
 
 
 </form>
 
+
 </div>
 </div>
+
+
 
 )
 
