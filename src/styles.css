@@ -45,7 +45,7 @@
 /* Apply basic styling and layout to the page */
 .landing-page {
     font-family: Arial, sans-serif;
-    padding: 20px;
+    /*padding: 20px;*/
   }
   
   /* Style the navigation menu */
@@ -207,4 +207,60 @@
     flex: 1;
     padding: 20px;
 }
+
+/* User profile */
+.user-profile {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-details {
+    margin-bottom: 20px;
+}
+
+.profile-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.profile-details p {
+    font-size: 16px;
+    color: #666;
+}
+
+.profile-posts {
+    margin-bottom: 20px;
+}
+
+.profile-posts h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.profile-posts ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.profile-posts li {
+    margin-bottom: 10px;
+}
+
+
 

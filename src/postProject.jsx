@@ -6,12 +6,30 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import ProjectCards from "./projectCards/ProjectCards";
 
 function PostProject() {
     const [show, setShow] = useState(false);
+    const [output, setOutput] = useState([]);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+
+    function createProject(project) {
+        return <ProjectCards description={project.description} title={project.title}/>
+    }
+
+    function onSubmit() {
+
+
+        var input = [
+            {title: "PBL PROJECT EXPLORER", description: "Project Explorer is an application where the projects are to be posted and requests are placed to work on those projects. The user receives requests for the projects which he/she has posted and can contact them through email or internal message system. After interviewing them, they can decide the team to work on their project."},
+
+        ];
+
+        setOutput(input.map(createProject));
+    }
 
     return (
         <>
@@ -46,12 +64,17 @@ function PostProject() {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="success" onClick={handleClose}>
+                    <Button variant="success" onClick={onSubmit}>
                         Submit
                     </Button>
                 </Modal.Footer>
             </Modal>
+            <div style={{display: "flex"}}>
+
+                {output}
+            </div>
         </>
+
     );
 }
 

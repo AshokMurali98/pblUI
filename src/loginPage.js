@@ -11,6 +11,8 @@ import RadioButtonGroup from "./testRadio";
 
 
 
+
+
 function LoginPage() {
  const navigate = useNavigate();
  // const history = useHistory();
@@ -19,7 +21,7 @@ function LoginPage() {
   password: '',
  });
 
- const [selectedOption, setSelectedOption] = useState('');
+ const [selectedOption, setSelectedOption] = useState('Guest');
 
  const handleOptionChange = (event) => {
   setSelectedOption(event.target.value);
@@ -65,110 +67,118 @@ function LoginPage() {
 
 
 return(
-<div className="login-background">
-<Header />
-<div class="container">
+    <div>
+     <Header />
+     <div className="login-background" style={{height:'90vh'}}>
+
+      <div className="container">
 
 
- <form onSubmit={handleSubmit} >
 
- <h2> <img src={logo} alt ="Logo" style={{ marginBottom: 'auto'}} className="logo" /></h2>
-  <Form>
-   <Form.Check
-       inline
-       label="Admin/User"
-       name="group1"
-       value="Admin/User"
-       type= "radio"
-       checked={selectedOption === 'Admin/User'}
-       onChange={handleOptionChange}
-       // id={`inline-${type}-1`}
-   />
-   <Form.Check
-       inline
-       label="Guest"
-       name="group1"
-       value="Guest"
-       type="radio"
-       checked={selectedOption === 'Guest'}
-       onChange={handleOptionChange}
-       // id={`inline-${type}-2`}
-   />
+        <form onSubmit={handleSubmit} >
 
-  </Form>
+         <h2> <img src={logo} alt ="Logo" style={{ marginBottom: 'auto'}} className="logo" /></h2>
+         <Form>
+          <Form.Check
+              inline
+              label="Admin/User"
+              name="group1"
+              value="Admin/User"
+              type= "radio"
+              checked={selectedOption === 'Admin/User'}
+              onChange={handleOptionChange}
+              // id={`inline-${type}-1`}
+          />
+          <Form.Check
+              inline
+              label="Guest"
+              name="group1"
+              value="Guest"
+              type="radio"
+              defaultChecked={true}
+              Checked={selectedOption === 'Guest'}
 
+              onChange={handleOptionChange}
+              // id={`inline-${type}-2`}
+          />
 
-  {/* <div class="form-group">*/}
-
-{/* <label for="username">UserName</label>*/}
-
-{/* <input type="text" value={formData.email} onChange={handleChange} name="email" required />*/}
-
-{/* </div>*/}
-
-{/* <div class="form-group">*/}
-
-{/*<label for="username">Password</label>*/}
-
-{/* <input type="text" value={formData.password} onChange={handleChange} name="password" required />*/}
-
-{/* </div>*/}
+         </Form>
 
 
-  {selectedOption === 'Admin/User' && (
-      // Render the content to be shown when 'option1' is selected
-      <div>
-       {/* Place your hidden page behavior components here */}
-       <div className="form-group">
+         {/* <div class="form-group">*/}
 
-        <label htmlFor="username">UserName</label>
+         {/* <label for="username">UserName</label>*/}
 
-        <input type="text"  name="email" required/>
+         {/* <input type="text" value={formData.email} onChange={handleChange} name="email" required />*/}
 
-       </div>
+         {/* </div>*/}
+
+         {/* <div class="form-group">*/}
+
+         {/*<label for="username">Password</label>*/}
+
+         {/* <input type="text" value={formData.password} onChange={handleChange} name="password" required />*/}
+
+         {/* </div>*/}
+
+
+         {selectedOption === 'Admin/User' && (
+             // Render the content to be shown when 'option1' is selected
+             <div>
+              {/* Place your hidden page behavior components here */}
+              <div className="form-group">
+
+               <label htmlFor="username">UserName</label>
+
+               <input type="text"  name="email" required/>
+
+              </div>
+
+             </div>
+         )}
+
+         {selectedOption === 'Guest' && (
+             // Render the content to be shown when 'option2' is selected
+             <div>
+              {/* Place your hidden page behavior components here */}
+              <div className="form-group">
+
+               <label htmlFor="username">UserName</label>
+
+               <input type="text" value={formData.email} onChange={handleChange} name="email" required/>
+
+              </div>
+
+              <div className="form-group">
+
+               <label htmlFor="username">Password</label>
+
+               <input type="password" value={formData.password} onChange={handleChange} name="password" required/>
+
+              </div>
+
+             </div>
+         )}
+
+
+
+         <div>
+
+          <button type="submit" className="btn btn-success">Login</button>
+
+         </div>
+
+
+
+
+        </form>
+
+
 
       </div>
-  )}
+     </div>
+    </div>
 
-  {selectedOption === 'Guest' && (
-      // Render the content to be shown when 'option2' is selected
-      <div>
-       {/* Place your hidden page behavior components here */}
-       <div className="form-group">
-
-        <label htmlFor="username">UserName</label>
-
-        <input type="text" value={formData.email} onChange={handleChange} name="email" required/>
-
-       </div>
-
-       <div className="form-group">
-
-        <label htmlFor="username">Password</label>
-
-        <input type="text" value={formData.password} onChange={handleChange} name="password" required/>
-
-       </div>
-
-      </div>
-  )}
-
-
-
-  <div>
-
-   <button type="submit" className="btn btn-success">Login</button>
-
-  </div>
-
-
-
-
-</form>
-
-
-</div>
-</div>
 
 
 

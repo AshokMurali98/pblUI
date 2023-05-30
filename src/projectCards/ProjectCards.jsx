@@ -4,10 +4,11 @@ function ProjectCards({title, description}) {
 
 
     return(
-        <Card style={{width: '15rem', margin: '10px'}}>
+        <Card  style={{width: '50rem', margin: '10px'}}>
             <Card.Body>
-                <Card.Title>{title}</Card.Title>
+                <Card.Title><b>{title}</b></Card.Title>
                 <Card.Text>{description}</Card.Text>
+
             </Card.Body>
         </Card>
     );
