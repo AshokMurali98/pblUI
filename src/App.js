@@ -13,6 +13,8 @@ import LoginPageTest from './testLogin';
 import Dashboard from "./dashboardComponent";
 import MessageScreen from "./signupMessageScreen";
 import UserProfile from "./userprofile";
+import Admin from "./admin";
+import Myprojects from "./myprojects";
 
 
 
@@ -38,6 +40,8 @@ return(
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/message" element={<MessageScreen />} />
         <Route exact path="/profile" element={<UserProfile />} />
+        <Route exact path="/admin" element={<Admin />} />
+        <Route exact path="/myprojects" element={<Myprojects />} />
     </Routes>
 </Router>
 )

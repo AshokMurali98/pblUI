@@ -37,9 +37,9 @@ function Dashboard() {
                     <LeftMenu />
 
                 </div >
-                <div align='right'>
+                <div >
                     {/*<button >Post your Project</button>*/}
-                    <PostProject />
+                    <PostProject> </PostProject>
                 </div>
 
             </div>

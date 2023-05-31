@@ -33,7 +33,8 @@ function PostProject() {
 
     return (
         <>
-            <Button variant="outline-success" style={{background:'#024930',color:'white'}} onClick={handleShow}>
+            <div>
+            <Button variant="outline-success" style={{background:'#024930',color:'white',marginInlineStart:'820px'}} onClick={handleShow}>
                 Post Your Project
             </Button>
 
@@ -72,6 +73,7 @@ function PostProject() {
             <div style={{display: "flex"}}>
 
                 {output}
+            </div>
             </div>
         </>
 
